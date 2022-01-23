@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { useSelector , useDispatch } from "react-redux";
+import { minusnumber, plusnumber } from './actions';
 
-function App() {
+
+const App = () => {
+  const selector = useSelector((state)=> state.changeNumber)
+  const dispatch = useDispatch()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>React Redux</h2>
+      <div className="container">
+      <button onClick={ () => dispatch(plusnumber(5))}>+</button>
+        <input value={selector} />
+        <button onClick={ () => dispatch(minusnumber(2))}>-</button>
+
+
+      </div>
+
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

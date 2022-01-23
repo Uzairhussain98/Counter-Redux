@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
 }
 
 .App-logo {
@@ -35,4 +40,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  display: flex;
+}
+.container > input {
+  text-align: center;
 }
